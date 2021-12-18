@@ -15,6 +15,7 @@ const white_rook = initializeImageVariable("https://upload.wikimedia.org/wikiped
 const white_bishop = initializeImageVariable("https://upload.wikimedia.org/wikipedia/commons/9/9b/Chess_blt60.png");
 const white_knight = initializeImageVariable("https://upload.wikimedia.org/wikipedia/commons/2/28/Chess_nlt60.png");
 const white_pawn = initializeImageVariable("https://upload.wikimedia.org/wikipedia/commons/0/04/Chess_plt60.png");
+const image_board = initializeImageVariable("https://cdn.pixabay.com/photo/2018/05/03/16/01/pattern-3371709_960_720.jpg")
 
 
 let board_offset = 30;
@@ -92,6 +93,7 @@ function loadFEN(fen) {
 
 function initBoard() {
     context.beginPath();
+    context.drawImage(image_board, 0, 0, board.width, board.height)
     context.strokeRect(board_offset, board_offset, board.width - board_offset * 2, board.height - board_offset * 2)
     for (let i = 0; i < 8; i++) {
         for (let j = 0; j < 8; j++) {
